@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Chat</title>
   <link rel="stylesheet" href="css/styles.css">
   
 </head>
@@ -47,7 +47,7 @@
           </li>
           <li class="p-2 card mt-2">
             <div class="card-body">
-              <div class="d-flex">
+              <div class="d-flex align-items-end">
                 <div>
                   <img class="rounded-pill me-3" width="60" src="https://randomuser.me/api/portraits/women/82.jpg">
                 </div>
@@ -66,21 +66,53 @@
       </div>
       <!-- COLUMNA DERECHA -->
       <div class="col-8" id="right">
+        <!-- CAJA CHAT: QUIEN ENVIA -->
         <div class="d-flex chat">
-          
-          <div class="w-50 d-flex align-items-end">
+          <!-- DISEÑO CAJA IMAGEN -->
+          <div class="w-25 d-flex align-items-end justify-content-end">
             <img class="rounded-pill me-3 avatar" width="60" src="https://randomuser.me/api/portraits/women/85.jpg">
           </div>
-
           <!-- DISEÑO CAJA CHAT -->
-          <div class="w-50">
+          <div class="w-75">
             <div class="card">
               <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem praesentium saepe magnam cum quod dolorem dolor minus quo, accusamus tempora ducimus exercitationem nulla iste voluptatum fuga ipsa amet iusto neque.1</div>
             </div>
-            <p class="small text-muted">8:45PM</p>
+            <p class="small text-light">8:45PM</p>
           </div>
-
         </div>  
+        <!-- CAJA CHAT: PERSONA PRINCIPAL QUE RECIBE -->
+        <div class="d-flex chat">
+          
+          <!-- DISEÑO CAJA CHAT -->
+          <div class="w-75">
+            <div class="card bg-dark">
+              <div class="card-body text-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem praesentium saepe magnam cum quod dolorem dolor minus quo, accusamus tempora ducimus exercitationem nulla iste voluptatum fuga ipsa amet iusto neque.1</div>
+            </div>
+            <p class="small text-light float-end">8:45PM</p>
+          </div>
+          <!-- DISEÑO CAJA IMAGEN -->
+          <div class="w-25 d-flex align-items-end">
+            <img class="rounded-pill ms-3 avatar" width="60" src="https://randomuser.me/api/portraits/women/51.jpg">
+          </div>
+        </div>  
+        <!-- INPUT PARA LOS MENSAJKES -->
+        <form action="" class="form-message">
+          <div class="row">
+            <div class="col">
+              <textarea name="" id="" class="form-control rounded-pill"></textarea>
+            </div>
+
+            <div class="col-auto">
+              <button class="btn btn-primary rounded-circle send-button">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+                </svg>
+
+
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>  
   </main>
