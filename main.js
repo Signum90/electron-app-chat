@@ -8,12 +8,14 @@ const { app, BrowserWindow } = require('electron')
 const createWindow = () => {
   // Instacia Ventana
   const win = new BrowserWindow({
-    width: 800,
+    width: 1000,
     height: 600,
-    resizable: false // Evitar Reajustar el tamaño
+    // resizable: false // Evitar Reajustar el tamaño
   });
   // Archivo HTML a cargar en ventana
   win.loadFile('./index.html');
+  // Abrir las dev tools
+  // win.webContents.openDevTools()
 }
 
 //# ARRANQUE >

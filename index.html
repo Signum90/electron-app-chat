@@ -4,53 +4,85 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    h1 {
-      text-align: center;
-    }
-    img {
-      border-radius: 10px;
-      margin-top: 5px;
-      width: 50%;
-      display: block;
-      margin: 0 auto;
-      box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.64);
-      -webkit-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.64);
-      -moz-box-shadow: 10px 10px 18px -6px rgba(0,0,0,0.64);
-    }
-    section {
-      text-align: center;
-      padding: 5px;
-    }
-    .btn {
-      background-color: #7733FF;
-      color: #ffffff;
-      padding: 15px 20px;
-      text-transform: uppercase;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      display: block;
-      margin: 0 auto;
-      transition: 200ms transform;
-    }
-    .btn:hover {
-      transform: translateY(-5px);
-      
-    }
-
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
+  
 </head>
 <body>
   <main>
-    <h1>El Tour del Gato Curioso</h1>
-    <img src="https://t3.ftcdn.net/jpg/02/36/99/22/360_F_236992283_sNOxCVQeFLd5pdqaKGh8DRGMZy7P4XKm.jpg" alt="gato curioso">
-    <section>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur a nihil et voluptatem tempora suscipit quis maxime placeat cum qui? Impedit, asperiores perferendis. Voluptatibus dignissimos qui natus itaque, illo quaerat!
-      </p>
-    </section>
-    <button class="btn">Ver Tour</button>
+    <div class="row">
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="col-4" id="left">
+        <!-- LISTADO TARJETAS -->
+        <ul class="contact list-unstyled mt-2 mb-0">
+          <!-- TARJETA MENSAJE -->
+          <li class="p-2 card">
+            <div class="card-body">
+              <div class="d-flex">
+                <div>
+                  <img class="rounded-pill me-3" width="60" src="https://randomuser.me/api/portraits/women/85.jpg">
+                </div>
+                <div>
+                  <p class="fw-bold mb-0 text-light">Elizabeth Fuller</p>
+                  <p class="small text-muted">Lorem ipsum, dolor sit amet....</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="p-2 card mt-2">
+            <div class="card-body">
+              <div class="d-flex">
+                <div>
+                  <img class="rounded-pill me-3" width="60" src="https://randomuser.me/api/portraits/men/51.jpg">
+                </div>
+                <div>
+                  <p class="fw-bold mb-0 text-light">Ethan Carroll</p>
+                  <p class="small text-muted">Lorem ipsum, dolor sit amet....</p>
+                </div>
+                <div>
+                  <p class="small text-muted">1 day ago</p>
+                  <span class="badge bg-danger rounded-pill float-end">2</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="p-2 card mt-2">
+            <div class="card-body">
+              <div class="d-flex">
+                <div>
+                  <img class="rounded-pill me-3" width="60" src="https://randomuser.me/api/portraits/women/82.jpg">
+                </div>
+                <div>
+                  <p class="fw-bold mb-0 text-light">Alyssa Presscott</p>
+                  <p class="small text-muted">Lorem ipsum, dolor sit amet....</p>
+                </div>
+                <div>
+                  <p class="small text-muted">1 week ago</p>
+                  <span class="badge bg-danger rounded-pill float-end">5</span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- COLUMNA DERECHA -->
+      <div class="col-8" id="right">
+        <div class="d-flex chat">
+          
+          <div class="w-50 d-flex align-items-end">
+            <img class="rounded-pill me-3 avatar" width="60" src="https://randomuser.me/api/portraits/women/85.jpg">
+          </div>
+
+          <!-- DISEÑO CAJA CHAT -->
+          <div class="w-50">
+            <div class="card">
+              <div class="card-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem praesentium saepe magnam cum quod dolorem dolor minus quo, accusamus tempora ducimus exercitationem nulla iste voluptatum fuga ipsa amet iusto neque.1</div>
+            </div>
+            <p class="small text-muted">8:45PM</p>
+          </div>
+
+        </div>  
+      </div>
+    </div>  
   </main>
 </body>
 </html>

@@ -11,5 +11,8 @@
   "description": "",
   "devDependencies": {
     "electron": "^37.2.4"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.7"
   }
 }
