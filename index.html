@@ -15,53 +15,55 @@
         <!-- LISTADO TARJETAS -->
         <ul class="contact list-unstyled mt-2 mb-0">
           <!-- TARJETA MENSAJE -->
-          <li class="p-2 card">
-            <div class="card-body">
-              <div class="d-flex">
-                <div>
-                  <img class="rounded-pill me-3" width="60" src="https://randomuser.me/api/portraits/women/85.jpg">
-                </div>
-                <div>
-                  <p class="fw-bold mb-0 text-light">Elizabeth Fuller</p>
-                  <p class="small text-muted">Lorem ipsum, dolor sit amet....</p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <li class="p-2 card mt-2">
-            <div class="card-body">
-              <div class="d-flex">
-                <div>
-                  <img class="rounded-pill me-3" width="60" src="https://randomuser.me/api/portraits/men/51.jpg">
-                </div>
-                <div>
-                  <p class="fw-bold mb-0 text-light">Ethan Carroll</p>
-                  <p class="small text-muted">Lorem ipsum, dolor sit amet....</p>
-                </div>
-                <div>
-                  <p class="small text-muted">1 day ago</p>
-                  <span class="badge bg-danger rounded-pill float-end">2</span>
+           <!-- 
+            <li class="p-2 card">
+              <div class="card-body">
+                <div class="d-flex">
+                  <div>
+                    <img class="rounded-pill me-3" width="60" src="https://randomuser.me/api/portraits/women/85.jpg">
+                  </div>
+                  <div>
+                    <p class="fw-bold mb-0 text-light">Elizabeth Fuller</p>
+                    <p class="small text-muted">Lorem ipsum, dolor sit amet....</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-          <li class="p-2 card mt-2">
-            <div class="card-body">
-              <div class="d-flex align-items-end">
-                <div>
-                  <img class="rounded-pill me-3" width="60" src="https://randomuser.me/api/portraits/women/82.jpg">
-                </div>
-                <div>
-                  <p class="fw-bold mb-0 text-light">Alyssa Presscott</p>
-                  <p class="small text-muted">Lorem ipsum, dolor sit amet....</p>
-                </div>
-                <div>
-                  <p class="small text-muted">1 week ago</p>
-                  <span class="badge bg-danger rounded-pill float-end">5</span>
+            </li>
+            <li class="p-2 card mt-2">
+              <div class="card-body">
+                <div class="d-flex">
+                  <div>
+                    <img class="rounded-pill me-3" width="60" src="https://randomuser.me/api/portraits/men/51.jpg">
+                  </div>
+                  <div>
+                    <p class="fw-bold mb-0 text-light">Ethan Carroll</p>
+                    <p class="small text-muted">Lorem ipsum, dolor sit amet....</p>
+                  </div>
+                  <div>
+                    <p class="small text-muted">1 day ago</p>
+                    <span class="badge bg-danger rounded-pill float-end">2</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
+            </li>
+            <li class="p-2 card mt-2">
+              <div class="card-body">
+                <div class="d-flex align-items-end">
+                  <div>
+                    <img class="rounded-pill me-3" width="60" src="https://randomuser.me/api/portraits/women/82.jpg">
+                  </div>
+                  <div>
+                    <p class="fw-bold mb-0 text-light">Alyssa Presscott</p>
+                    <p class="small text-muted">Lorem ipsum, dolor sit amet....</p>
+                  </div>
+                  <div>
+                    <p class="small text-muted">1 week ago</p>
+                    <span class="badge bg-danger rounded-pill float-end">5</span>
+                  </div>
+                </div>
+              </div>
+            </li>
+           -->
         </ul>
       </div>
       <!-- COLUMNA DERECHA -->
@@ -114,7 +116,59 @@
           </div>
         </form>
       </div>
+
     </div>  
   </main>
+  <script>
+    var contacts = [
+      {
+        name: "Elizabeth Fuller",
+        image: "https://randomuser.me/api/portraits/women/85.jpg",
+        last_chat: [{
+          date: '9:45 AM',
+          message: 'Hola amigo'
+        }]
+      },
+      {
+        name: "Ethan Carroll",
+        image: "https://randomuser.me/api/portraits/men/51.jpg",
+        last_chat: [{
+          date: '3:00 PM',
+          message: 'Como estas, como te ha ido'
+        }]
+      },
+      {
+        name: "Alyssa Presscott",
+        image: "https://randomuser.me/api/portraits/women/82.jpg",
+        last_chat: [{
+          date: '6:00 AM',
+          message: 'Se deben cargar todos los trabajos para el día de hoy'
+        }]
+      }
+    ];
+    let list = '';
+    contacts.forEach(contact => {
+      list += `
+        <li class="p-2 card mt-2">
+          <div class="card-body">
+            <div class="d-flex">
+              <div>
+                <img class="rounded-pill me-3" width="60" src="${ contact.image }">
+              </div>
+              <div>
+                <p class="fw-bold mb-0 text-light">${ contact.name }</p>
+                <p class="small text-muted">${ contact.last_chat[0].message }</p>
+              </div>
+              <div>
+                <p class="small text-muted">${ contact.last_chat[0].date }</p>
+                <span class="badge bg-danger rounded-pill float-end">${ contact.last_chat.length }</span>
+              </div>
+            </div>
+          </div>
+        </li>
+      `
+    });
+    document.querySelector('.contact').innerHTML = list
+  </script>
 </body>
 </html>
