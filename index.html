@@ -12,6 +12,7 @@
     <div class="row">
       <!-- COLUMNA IZQUIERDA -->
       <div class="col-4" id="left">
+        <button onclick="onClick()">Click</button>
         <!-- LISTADO TARJETAS -->
         <ul class="contact list-unstyled mt-2 mb-0">
           <!-- TARJETA MENSAJE -->
@@ -120,6 +121,21 @@
     </div>  
   </main>
   <script>
+    // IMPORTAR 
+    const { ipcRenderer } = require('electron');
+    // ESCUCHAR MENSAJES DEL PROCESO PRINCIPAL:
+    // Escuchar mensaje al proceso principal, main.js
+    ipcRenderer.on('data-from-server', (event, args) => {
+      // Los valores enviados por el servidor llegan en los args
+      console.log('Mensaje del servidor', args);
+    });
+    // ENVIAR MENSAJES AL PROCESO PRINCIPAL
+    ipcRenderer.send('data-from-web', 'Hola Server')
+    // Enviar desde un evento click en el Front
+    const onClick = () => {
+      ipcRenderer.send('data-from-web-click', {dato: 'el coco'})
+    }
+    // contactos
     var contacts = [
       {
         name: "Elizabeth Fuller",
