@@ -4,6 +4,8 @@
 /**@DESC: xxxxxxxxxx */
 //# IMPORTS >
 const { app, BrowserWindow, ipcMain, ipcRenderer } = require('electron');
+//# SIMULACIÓN DE DATOS >
+const { contacts, chats } = require('./data');
 /**
  * ipcMain -> Permite comunicar el proceso principal
  * con las vistas , eventos y mensajes, Se comunica de forma asincrónica desde el proceso principal a los procesos de renderizado.
@@ -34,10 +36,12 @@ const createWindow = () => {
    */
   // EVENTOS: 
   win.webContents.on('did-finish-load', () => {
-    console.log("Finalizo la carga de la página")
-    
+    console.log("Finalizo la carga de la página");
     // Enviar mensaje a la página que lo invoca
-    win.webContents.send('data-from-server', 'Hola Página')
+    win.webContents.send('data-from-server', 'Hola Página');
+    // ENVIAR SIMULACIÓN DE DATOS
+    win.webContents.send('contacts', contacts);
+    win.webContents.send('chats', chats);
   })
   // ESCUCHAR EVENTOS DEL PROCESO DE RENDERIZADO
   ipcMain.on('data-from-web', (event, data) => {
@@ -47,6 +51,7 @@ const createWindow = () => {
     console.log('La página envia: ', payload);
     
   })
+
 }
 
 //# ARRANQUE >
