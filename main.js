@@ -5,7 +5,7 @@
 //# IMPORTS >
 const { app, BrowserWindow, ipcMain, ipcRenderer } = require('electron');
 //# SIMULACIÓN DE DATOS >
-const { contacts, chats } = require('./data');
+const { contacts, chats, chats_user } = require('./data');
 /**
  * ipcMain -> Permite comunicar el proceso principal
  * con las vistas , eventos y mensajes, Se comunica de forma asincrónica desde el proceso principal a los procesos de renderizado.
@@ -17,7 +17,7 @@ const { contacts, chats } = require('./data');
 const createWindow = () => {
   // Instacia Ventana
   const win = new BrowserWindow({
-    width: 1000,
+    width: 1300,
     height: 600,
     // resizable: false // Evitar Reajustar el tamaño
     // Realizar Integración con NODE, solo para desarrollo
@@ -43,15 +43,21 @@ const createWindow = () => {
     win.webContents.send('contacts', contacts);
     win.webContents.send('chats', chats);
   })
+  
   // ESCUCHAR EVENTOS DEL PROCESO DE RENDERIZADO
   ipcMain.on('data-from-web', (event, data) => {
     console.log("La página web dice", data);
   })
+  
   ipcMain.on('data-from-web-click', (event, payload) => {
     console.log('La página envia: ', payload);
     
-  })
+  });
 
+  ipcMain.on('pp-get-chat', (evet, payload) => {
+    // Enviar chat solicitado
+    win.webContents.send('pr-get-chat', chats_user[payload.id]);
+  });
 }
 
 //# ARRANQUE >

@@ -47,8 +47,50 @@ const chats = [
     }
   }
 ];
+const chats_user = [
+  [
+    {
+    name: "Elizabeth Fuller",
+    image: "https://randomuser.me/api/portraits/women/85.jpg",
+    chat:{
+      date: '9:45 AM',
+      message: 'la kk peluza'
+      }
+    },
+    {
+      name: "Alexis Cominolo",
+      image: "https://randomuser.me/api/portraits/women/51.jpg",
+      chat: {
+        date: '3:00 PM',
+        message: 'el coco peluso'
+      }
+    }
+  ],
+  [
+
+  ],
+  [
+    {
+    name: "Alyssa Presscott",
+    image: "https://randomuser.me/api/portraits/women/82.jpg",
+    chat:{
+      date: '8:16 AM',
+      message: 'Rompolano'
+      }
+    },
+    {
+      name: "Alexis Cominolo",
+      image: "https://randomuser.me/api/portraits/women/51.jpg",
+      chat: {
+        date: '9:00 AM',
+        message: 'Rompoculo'
+      }
+    }
+  ]
+]
 //# >>>
 module.exports = {
   contacts,
-  chats
+  chats,
+  chats_user
 };
