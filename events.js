@@ -78,6 +78,7 @@ ipcRenderer.on('contacts', (event, contacts) => {
 ipcRenderer.on('chats', (event, chats) => {
   createChats(chats);
 });
+
 // Recibir chat =>
 ipcRenderer.on('pr-get-chat', (event, chats_user) => {
   console.log(chats_user);
